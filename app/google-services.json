@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1040858756897",
+    "project_id": "kingpin-26de7",
+    "storage_bucket": "kingpin-26de7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1040858756897:android:b8b8596fc48fff72e7b060",
+        "android_client_info": {
+          "package_name": "com.example.kingpin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1040858756897-utbukb7q3g6nu0ik9t4dikim8ndarkjh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kingpin",
+            "certificate_hash": "58207c589a40cea3a4dd53a000785dd234e3354d"
+          }
+        },
+        {
+          "client_id": "1040858756897-tiom8cqjggn8fmuir46hu06lbbcq9ail.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPBnHlrmDcGwu33AFYDvXf1Gt19COYRyU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1040858756897-tiom8cqjggn8fmuir46hu06lbbcq9ail.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
