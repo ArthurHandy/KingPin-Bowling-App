@@ -16,7 +16,6 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -24,7 +23,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class Login extends AppCompatActivity {
-
 
     private EditText loginEmailtext;
     private EditText loginPasswordtext;
@@ -34,37 +32,36 @@ public class Login extends AppCompatActivity {
     private ProgressBar progressBar;
     private CheckBox checkBox;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
         mAuth = FirebaseAuth.getInstance();
+
         progressBar = findViewById(R.id.login_progressBar);
-        checkBox = findViewById(R.id.login_checkbox);
         loginEmailtext = findViewById(R.id.login_email);
+        checkBox = findViewById(R.id.login_checkbox);
         loginPasswordtext = findViewById(R.id.login_password);
         loginbtn = findViewById(R.id.login_button);
         loginregisterbtn = findViewById(R.id.login_register_button);
 
-        loginbtn.setOnClickListener(new View.OnClickListener() {
+        loginbtn.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View view){
+            public void onClick(View view) {
                 String loginEmail = loginEmailtext.getText().toString();
                 String loginpass = loginPasswordtext.getText().toString();
 
-                if (!TextUtils.isEmpty(loginEmail) || !TextUtils.isEmpty(loginpass)){
+                if (!TextUtils.isEmpty(loginEmail) || !TextUtils.isEmpty(loginpass)) {
                     progressBar.setVisibility(View.VISIBLE);
-
-                    mAuth.signInWithEmailAndPassword(loginEmail, loginpass) .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    mAuth.signInWithEmailAndPassword(loginEmail, loginpass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()){
                                 sendtoMain();
                             }else {
                                 String error = task.getException().getMessage();
-                                Toast.makeText (getApplicationContext(), "Error :" + error, Toast.LENGTH_LONG).show();
+                                Toast.makeText(getApplicationContext(),"Error :" + error, Toast.LENGTH_LONG).show();
                             }
                         }
                     });
@@ -72,12 +69,12 @@ public class Login extends AppCompatActivity {
             }
         });
 
-        checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
             @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (b) {
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b){
+                if (b){
                     loginPasswordtext.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-                } else {
+                }else {
                     loginPasswordtext.setTransformationMethod(PasswordTransformationMethod.getInstance());
                 }
             }
@@ -85,19 +82,19 @@ public class Login extends AppCompatActivity {
 
         loginregisterbtn.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick (View view) {
+            public void onClick(View view) {
                 Intent intent = new Intent(Login.this,Register.class);
                 startActivity(intent);
             }
         });
-
     }
 
     @Override
     protected void onStart() {
         super.onStart();
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
-        if (currentUser == null){
+        if (currentUser != null){
+
             Intent intent = new Intent(Login.this,MainActivity.class);
             startActivity(intent);
             finish();
@@ -109,7 +106,4 @@ public class Login extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
-
-
-
 }

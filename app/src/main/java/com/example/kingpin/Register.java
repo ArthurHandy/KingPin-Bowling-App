@@ -24,18 +24,14 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class Register extends AppCompatActivity {
 
-
     private EditText register_email_field;
     private EditText register_pass_field;
     private EditText register_confir_pass_field;
     private Button reg_btn;
     private Button reg_login_btn;
-    private FirebaseAuth mAuth;
     private ProgressBar progressBar;
     private CheckBox checkBox;
-
-
-
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,85 +39,89 @@ public class Register extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         mAuth = FirebaseAuth.getInstance();
+
         checkBox = findViewById(R.id.register_checkbox);
         register_email_field = findViewById(R.id.register_email);
         register_pass_field = findViewById(R.id.register_password);
         register_confir_pass_field = findViewById(R.id.register_confirm_password);
         reg_btn = findViewById(R.id.register_button);
+        reg_login_btn = findViewById(R.id.register_login_button);
         progressBar = findViewById(R.id.register_progressBar);
 
-        checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        // When password is checked, you can see password.
+        // When password is not checked, you can not see password.
+        checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
             @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (b) {
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b){
+                if (b){
                     register_pass_field.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
                     register_confir_pass_field.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-                } else {
+                }else {
                     register_pass_field.setTransformationMethod(PasswordTransformationMethod.getInstance());
-                    register_confir_pass_field.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    register_confir_pass_field.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
                 }
             }
         });
 
         reg_btn.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick (View view) {
+            public void onClick(View view){
                 String email = register_email_field.getText().toString();
                 String pass = register_pass_field.getText().toString();
                 String confirm_pass = register_confir_pass_field.getText().toString();
 
+                // Check if empty or not
                 if (!TextUtils.isEmpty(email) || !TextUtils.isEmpty(pass) || !TextUtils.isEmpty(confirm_pass)) {
-                    if (pass.equals(confirm_pass)) {
+                    if (pass.equals(confirm_pass)){
                         progressBar.setVisibility(View.VISIBLE);
-                        ;
 
-                        mAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        mAuth.createUserWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (task.isSuccessful()) {
+                                if (task.isSuccessful()){
                                     sendtoMain();
-                                } else {
+                                }else {
                                     String error = task.getException().getMessage();
-                                    Toast.makeText(getApplicationContext(), "Error :" + error, Toast.LENGTH_LONG).show();
+                                    Toast.makeText(getApplicationContext(), "Error: " + error, Toast.LENGTH_LONG).show();
                                 }
 
                                 progressBar.setVisibility(View.INVISIBLE);
                             }
                         });
-                    } else {
-                        Toast.makeText(getApplicationContext(), "Confirm password and password field doesn't Match :", Toast.LENGTH_LONG).show();
+                    }else {
+                        Toast.makeText(getApplicationContext(), "Confirm password and password field doesn't match: ", Toast.LENGTH_LONG).show();
                     }
                 }
             }
         });
 
-
-        reg_login_btn.setOnClickListener(new View.OnClickListener() {
+        reg_login_btn.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick (View view) {
+            public void onClick(View view) {
                 Intent intent = new Intent(Register.this,Login.class);
                 startActivity(intent);
+                finish();
             }
         });
     }
 
-
     @Override
     protected void onStart() {
         super.onStart();
-
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
-        if (currentUser == null){
+
+        if (currentUser != null){
             sendtoMain();
+
         }
     }
 
     private void sendtoMain(){
-            Intent intent = new Intent(Register.this,MainActivity.class);
-            startActivity(intent);
-            finish();
-        }
 
+        Intent intent = new Intent(Register.this,MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
 }
 
 
