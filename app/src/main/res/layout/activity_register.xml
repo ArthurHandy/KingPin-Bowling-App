@@ -63,13 +63,12 @@
         android:id="@+id/register_checkbox"/>
 
     <Button
+        android:id="@+id/register_button"
         android:layout_width="380dp"
         android:layout_height="wrap_content"
-        android:background="@android:color/white"
-        android:textColor="@android:color/holo_red_light"
-        android:text="register"
         android:layout_marginTop="20dp"
-        android:id="@+id/register_button"/>
+        android:text="register"
+        android:textColor="@android:color/holo_red_light" />
 
     <Button
         android:layout_width="380dp"

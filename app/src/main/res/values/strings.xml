@@ -1,3 +1,42 @@
 <resources>
     <string name="app_name">KingPin</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="random_button_text">MeetUp</string>
+    <string name="previous">Previous</string>
+
+    <string name="title_first_fragment">KingPin</string>
+    <string name="random_heading">Number of games available %d.</string>
+    <string name="toast_button_text">Stats</string>
+    <string name="count_button_text">Add Game</string>
+
+    <string name="chartText">Game 1 by Frame</string>
+
+    <!--    Enter Score page-->
+    <string name="enter_score_title">Enter Scores</string>
+    <string name="frameTitle">Frame</string>
+    <string name="roll1Title">Roll 1</string>
+    <string name="roll2Title">Roll 2</string>
+    <string name="scoreTitle">TextView</string>
+    <string name="frame1">1</string>
+    <string name="score_frame1">9</string>
+    <string name="score_frame2">29</string>
+    <string name="score_frame3">48</string>
+    <string name="score_frame4">57</string>
+    <string name="score_frame5">65</string>
+    <string name="score_frame6">82</string>
+    <string name="score_frame7">89</string>
+    <string name="score_frame8">107</string>
+    <string name="score_frame9">107</string>
+    <string name="score_frame10">116</string>
+    <string name="totalScore_Text">116</string>
+    <string name="rollscore_hint">10</string>
+
+
+
+    <string name="save_scoreBTN">SAVE</string>
+    <string name="saveBTN">Save</string>
+    <string name="bowling_pin_icon">bowling pin icon</string>
 </resources>

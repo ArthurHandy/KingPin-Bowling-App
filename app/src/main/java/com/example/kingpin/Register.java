@@ -79,6 +79,7 @@ public class Register extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()){
+//                                    FirebaseUser
                                     sendtoMain();
                                 }else {
                                     String error = task.getException().getMessage();

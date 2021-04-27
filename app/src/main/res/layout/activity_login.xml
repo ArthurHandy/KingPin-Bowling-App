@@ -15,7 +15,7 @@
       android:layout_height="wrap_content"
       android:layout_marginBottom="140dp"
       android:gravity="center_horizontal"
-      android:text="Login UI"
+      android:text="Login"
       android:textAlignment="center"
       android:textColor="@android:color/white"
       android:textSize="40sp" />
@@ -28,7 +28,8 @@
       android:inputType="textEmailAddress"
       android:backgroundTint="@android:color/white"
       android:textColor="@android:color/white"
-      android:textColorHint="@android:color/white" />
+      android:textColorHint="@android:color/white"
+      android:imeOptions="actionDone" />
 
   <EditText
       android:layout_width="380dp"
@@ -39,7 +40,8 @@
       android:layout_marginTop="10dp"
       android:backgroundTint="@android:color/white"
       android:textColor="@android:color/white"
-      android:textColorHint="@android:color/white" />
+      android:textColorHint="@android:color/white"
+      android:imeOptions="actionDone"/>
 
   <CheckBox
       android:layout_width="200dp"
@@ -63,7 +65,7 @@
   <Button
       android:layout_width="380dp"
       android:layout_height="wrap_content"
-      android:background="#30ffffff"
+      android:background="@android:color/holo_red_light"
       android:textColor="@android:color/white"
       android:text="Sign Up"
       android:layout_marginTop="20dp"

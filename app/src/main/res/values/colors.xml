@@ -16,4 +16,12 @@
     <color name="start">#FFEE58</color>
     <color name="mid">#3cb29d</color>
 
+    <color name="bluegreen">#3cb29d</color>
+    <color name="lightred">#d9645b</color>
+    <color name="screenBackground">#FFEE58</color>
+    <color name="buttonBackground">#BBDEFB</color>
+    <color name="screenBackground2">#26C6DA</color>
+
+
+
 </resources>
