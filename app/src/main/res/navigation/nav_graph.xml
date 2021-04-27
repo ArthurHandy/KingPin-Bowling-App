@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/FirstFragment">
+
+    <fragment
+        android:id="@+id/FirstFragment"
+        android:name="com.example.kingpin.FirstFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_first">
+
+        <action
+            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            app:destination="@id/SecondFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_Chart"
+            app:destination="@id/ChartGame" />
+
+        <action
+            android:id="@+id/action_FirstFragment_to_EnterScore"
+            app:destination="@id/EnterScore" />
+    </fragment>
+    <fragment
+        android:id="@+id/SecondFragment"
+        android:name="com.example.kingpin.SecondFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_second">
+
+        <action
+            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+        <argument
+            android:name="myArg"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ChartGame"
+        android:name="com.example.kingpin.ChartGame"
+        android:label="@string/chartText"
+        tools:layout="@layout/chart_game" >
+        <action
+            android:id="@+id/action_ChartFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/EnterScore"
+        android:name="com.example.kingpin.EnterScore"
+        android:label="@string/enter_score_title"
+        tools:layout="@layout/enter_score" >
+        <action
+            android:id="@+id/action_EnterFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+</navigation>
