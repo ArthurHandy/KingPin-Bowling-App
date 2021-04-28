@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:theme="@style/Theme.KingPin"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Email.EmailActivity" >
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="22dp"
+        android:layout_marginTop="16dp"
+        android:ems="10" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editText1"
+        android:layout_below="@+id/editText1"
+        android:layout_marginTop="18dp"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editText2"
+        android:layout_below="@+id/editText2"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:inputType="textMultiLine" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/editText1"
+        android:layout_alignBottom="@+id/editText1"
+        android:layout_alignParentLeft="true"
+        android:text="To:" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/editText2"
+        android:layout_alignBottom="@+id/editText2"
+        android:layout_alignParentLeft="true"
+        android:text="Subject:" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/editText3"
+        android:layout_alignBottom="@+id/editText3"
+        android:layout_alignParentLeft="true"
+        android:text="Message:" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editText3"
+        android:layout_below="@+id/editText3"
+        android:layout_marginLeft="76dp"
+        android:layout_marginTop="20dp"
+        android:text="Send" />
+
+</RelativeLayout>

@@ -15,6 +15,9 @@
         <activity
             android:name=".Login"
             android:theme="@style/Theme.Login"></activity>
+        <activity
+            android:name=".Email.EmailActivity"
+            android:theme="@style/Theme.Login"></activity>
 
         <activity android:name=".MainActivity">
             <intent-filter>

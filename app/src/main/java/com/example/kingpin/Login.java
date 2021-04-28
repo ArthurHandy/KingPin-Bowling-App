@@ -32,6 +32,10 @@ public class Login extends AppCompatActivity {
     private ProgressBar progressBar;
     private CheckBox checkBox;
 
+    /**
+     * overriden onCreate method for Login activity,
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

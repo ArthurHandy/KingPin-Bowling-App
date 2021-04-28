@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">KingPin</string>
+    <string name="menu_settings">settings</string>
 </resources>

@@ -10,11 +10,16 @@ import android.widget.Button;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+
 public class MainActivity extends AppCompatActivity {
 
     Button button;
     private FirebaseAuth mAuth;
 
+    /**
+     * overrided onCreate method, launches firebase authentication on creation, and an Intent. launches
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +40,9 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * calls the base class android onStart method
+     */
     @Override
     protected void onStart() {
         super.onStart();
