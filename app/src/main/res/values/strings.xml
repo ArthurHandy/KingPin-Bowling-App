@@ -31,12 +31,12 @@
     <string name="score_frame8">107</string>
     <string name="score_frame9">107</string>
     <string name="score_frame10">116</string>
-    <string name="totalScore_Text">116</string>
+    <string name="totalScore_Text">0</string>
     <string name="rollscore_hint">10</string>
 
 
 
-    <string name="save_scoreBTN">SAVE</string>
+    <string name="save_scoreBTN">TOTAL</string>
     <string name="saveBTN">Save</string>
     <string name="bowling_pin_icon">bowling pin icon</string>
     <string name="display_score_title">Score</string>

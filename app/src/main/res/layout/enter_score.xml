@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
 
     <!--    <TableLayout-->
     <!--        android:layout_width="wrap_content"-->
@@ -23,11 +24,12 @@
         android:id="@+id/enterNameText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:autofillHints=""
         android:fontFamily="monospace"
         android:hint="Enter Name"
-        android:textSize="36sp"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,13 +38,13 @@
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="344dp"
-        android:layout_height="418dp"
+        android:layout_width="356dp"
+        android:layout_height="484dp"
+        android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toTopOf="@id/savescoreBTN"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/enterNameText">
+        app:layout_constraintStart_toStartOf="parent">
 
         <TableLayout
             android:layout_width="wrap_content"
@@ -581,10 +583,12 @@
         android:id="@+id/totalScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="16dp"
         android:text="@string/totalScore_Text"
         android:textSize="40sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/savescoreBTN"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
@@ -593,23 +597,26 @@
         android:id="@+id/savescoreBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="@string/save_scoreBTN"
         android:visibility="visible"
         app:backgroundTint="#E91E63"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/totalScore"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
 
     <ImageButton
         android:id="@+id/imageButton3"
-        android:layout_width="55dp"
-        android:layout_height="64dp"
+        android:layout_width="57dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/scrollView2"
+        app:layout_constraintStart_toEndOf="@+id/savescoreBTN"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.951"
         app:srcCompat="@drawable/fui_ic_check_circle_black_128dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

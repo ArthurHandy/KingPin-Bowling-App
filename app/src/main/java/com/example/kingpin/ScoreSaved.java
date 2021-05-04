@@ -70,7 +70,6 @@ public class ScoreSaved extends Fragment {
                     System.out.println(g1.getName());
                     System.out.println(g1.getTotalScore());
 //                    list.add(snapshot.getValue().toString());
-//                    list.add(Objects.requireNonNull(g1).getName());
                    displayNameText.setText(g1.getName());
                    displayScoreText.setText(g1.getTotalScore());
                 }

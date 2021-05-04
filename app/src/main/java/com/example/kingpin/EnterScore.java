@@ -101,6 +101,8 @@ public class EnterScore extends Fragment {
 
     ListView listView;
 
+    String gameName;
+
 
 
 //    Button mButton;
@@ -192,10 +194,10 @@ public class EnterScore extends Fragment {
 
         String userId = user.getUid();
 
-        String gameName = enterName.getText().toString();
+//        String gameName = enterName.getText().toString();
 
         HashMap<String, Object> game = new HashMap<>();
-        game.put("Name", gameName);
+
 
 //        FirebaseDatabase.getInstance().getReference().child(userId).child("Games").child(gameName).updateChildren(game);
 
@@ -358,6 +360,9 @@ public class EnterScore extends Fragment {
             public void onClick(View view) {
 //                HashMap<String, Object> totalFrames = new HashMap<>();
 
+                gameName = enterName.getText().toString();
+                game.put("Name", gameName);
+
                 //HashMap holds each frame --> Roll 1, Roll 2, Score, Total, Type
                 HashMap<String, Object> addFrame = new HashMap<>();
                 int frameScore;
@@ -377,8 +382,6 @@ public class EnterScore extends Fragment {
                 //For loop to add frame scores to database
                 for(int i = 0; i < 18; i++){
 
-//                    addFrame.put(String.valueOf(x),String.valueOf(frame[i]));
-//                    frame.put(String.valueOf(x),frame[i]);
                     if(i % 2 != 0){
                         x++;
                         frameName = "Frame" + x;
@@ -428,107 +431,7 @@ public class EnterScore extends Fragment {
                 NavHostFragment.findNavController(EnterScore.this).navigate(R.id.action_EnterFragment_to_SavedScore);
             }
         });
-    ///////////////////////////////////////////////////////////////
 
-
-//        bottomScore = view.findViewById(R.id.totalScore);
-
-//        frame1_roll1 = view.findViewById(R.id.frame1_roll1);
-//        frame1_roll2 = view.findViewById(R.id.frame1_roll2);
-//        frame_BTN1 = view.findViewById(R.id.frame1BTN);
-//
-//        totalScore += displayScore(view, frame1_roll1, frame1_roll2, frame_BTN1, totalScore,0);
-//        dScore(view, frame_BTN1, totalScore,0);
-//
-//
-//        frame2_roll1 = view.findViewById(R.id.frame2_roll1);
-//        frame2_roll2 = view.findViewById(R.id.frame2_roll2);
-//        frame_BTN2 = view.findViewById(R.id.frame2BTN);
-//
-//        totalScore += displayScore(view, frame2_roll1, frame2_roll2, frame_BTN2, totalScore,2);
-//
-//        dScore(view, frame_BTN2, totalScore,2);
-//
-//
-//        frame3_roll1 = view.findViewById(R.id.frame3_roll1);
-//        frame3_roll2 = view.findViewById(R.id.frame3_roll2);
-//        frame_BTN3 = view.findViewById(R.id.frame3BTN);
-//
-//        totalScore += displayScore(view, frame3_roll1, frame3_roll2, frame_BTN3, totalScore,4);
-//
-//
-//        frame4_roll1 = view.findViewById(R.id.frame4_roll1);
-//        frame4_roll2 = view.findViewById(R.id.frame4_roll2);
-//        frame_BTN4 = view.findViewById(R.id.frame4BTN);
-//
-//        totalScore += displayScore(view, frame4_roll1, frame4_roll2, frame_BTN4, totalScore,3);
-//
-//        frame5_roll1 = view.findViewById(R.id.frame5_roll1);
-//        frame5_roll2 = view.findViewById(R.id.frame5_roll2);
-//        frame_BTN5 = view.findViewById(R.id.frame5BTN);
-//
-//        totalScore += displayScore(view, frame5_roll1, frame5_roll2, frame_BTN5, totalScore,4);
-//
-//        frame6_roll1 = view.findViewById(R.id.frame6_roll1);
-//        frame6_roll2 = view.findViewById(R.id.frame6_roll2);
-//        frame_BTN6 = view.findViewById(R.id.frame6BTN);
-//
-//        totalScore += displayScore(view, frame6_roll1, frame6_roll2, frame_BTN6, totalScore,5);
-//
-//
-//        frame7_roll1 = view.findViewById(R.id.frame7_roll1);
-//        frame7_roll2 = view.findViewById(R.id.frame7_roll2);
-//        frame_BTN7 = view.findViewById(R.id.frame7BTN);
-//
-//        frame8_roll1 = view.findViewById(R.id.frame8_roll1);
-//        frame8_roll2 = view.findViewById(R.id.frame8_roll2);
-//        frame_BTN8 = view.findViewById(R.id.frame8BTN);
-//
-//        frame9_roll1 = view.findViewById(R.id.frame9_roll1);
-//        frame9_roll2 = view.findViewById(R.id.frame9_roll2);
-//        frame_BTN9 = view.findViewById(R.id.frame9BTN);
-//
-//        frame10_roll1 = view.findViewById(R.id.frame10_roll1);
-//        frame10_roll2 = view.findViewById(R.id.frame10_roll2);
-//        frame_BTN10 = view.findViewById(R.id.frame10BTN);
-
-//        String score = String.valueOf(totalScore);
-//        bottomScore.setText(score);
-
-//        frame1_roll1.setOnKeyListener(new View.OnKeyListener() {
-//            public boolean onKey(View v, int keyCode, KeyEvent event) {
-//                if(KeyEvent.KEYCODE_ENTER == keyCode) {
-//                    j.requestFocus();
-//                    if(frame1_roll1.getText().toString()!=""){
-//                        int r1= Integer.parseInt(frame1_roll1.getText().toString());
-//                    }
-//
-//            }
-//        });
-
-//        frame1_roll2.setOnKeyListener(new View.OnKeyListener() {
-//            public boolean onKey(View v, int keyCode, KeyEvent event) {
-//                if(KeyEvent.KEYCODE_ENTER == keyCode) {
-////                    j.requestFocus();
-//                    if(frame1_roll1.getText().toString()!="")
-//                        num = Integer.parseInt(frame1_roll1.getText().toString());
-//                    if (num >= 0 && num <= 10) {
-////                        bottomScore.setText(String.valueOf(num));
-//
-//                        String score = String.valueOf(calcScore(view, frame1_roll1, frame1_roll2, totalScore));
-//
-//
-//                        bottomScore.setText(score);
-//                    }
-//                    return true;
-//                }
-//                else
-//                {
-//                    return false;
-//                }
-//
-//            }
-//        });
 
 
     }
@@ -577,8 +480,14 @@ public class EnterScore extends Fragment {
     public int calcFrame10(int r1, int r2, int r3){
         //FRAME 10 case
         boolean roll3 = false;
+        int sub=0;
         int score = r1+r2;
-        if(r1 == 10 || score == 10){
+        if(r1==10){
+           sub = 10;
+           sub+=(r2+r3);
+           score = sub;
+        }
+        else if(score == 10){
             score += r3;
         }
         return score;

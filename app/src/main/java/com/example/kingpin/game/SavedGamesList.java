@@ -1,5 +1,6 @@
 package com.example.kingpin.game;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,7 @@ import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.kingpin.ChartGame;
 import com.example.kingpin.Constants;
 import com.example.kingpin.R;
 import com.example.kingpin.ScoreSaved;
@@ -35,6 +37,8 @@ public class SavedGamesList extends Fragment {
 
     ListView listView;
 
+    Intent gameIntent;
+
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
@@ -48,6 +52,7 @@ public class SavedGamesList extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         listView = view.findViewById(R.id.listViewGames);
+
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
