@@ -6,6 +6,9 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+/**
+ * Enter Score Unit Test
+ */
 public class EnterScoreTest extends TestCase {
 
     @Test

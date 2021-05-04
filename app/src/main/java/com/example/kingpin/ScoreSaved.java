@@ -26,8 +26,9 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 /**
- * @author Group7
+ *
  * Fragment activity that saves the scores inputed by user
+ * @author Group7
  */
 public class ScoreSaved extends Fragment {
 

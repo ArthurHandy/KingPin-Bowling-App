@@ -17,6 +17,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+/**
+ * ViewFrames activity to show all the frames in the listView
+ */
 public class ViewFrames extends AppCompatActivity {
 
     /**

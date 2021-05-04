@@ -12,9 +12,10 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 /**
- * @author Group7
+ *
  * Creates the home page off of main activity
  * Branches to add game or view stats
+ * @author Group7
  */
 public class FirstFragment extends Fragment {
 

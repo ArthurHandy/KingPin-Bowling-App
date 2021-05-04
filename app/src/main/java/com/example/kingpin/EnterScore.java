@@ -31,7 +31,9 @@ import java.util.HashMap;
 import java.util.List;
 
 
-
+/**
+ * Lets user enter scores and proccess information into a Game Object
+ */
 public class EnterScore extends Fragment {
 
     // array of scores  frame 1 --> 10

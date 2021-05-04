@@ -14,9 +14,11 @@ import androidx.navigation.fragment.NavHostFragment;
 
 
 /**
- * @author Group7
+ *
  * Second Fragment actvity that creates fragment second.
  * Allows user to go back to home page.
+ * 
+ *  @author Group7
  */
 public class SecondFragment extends Fragment {
 

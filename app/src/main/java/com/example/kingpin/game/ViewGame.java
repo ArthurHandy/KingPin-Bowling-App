@@ -24,6 +24,10 @@ import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
 
+/**
+ * ViewGames generates a game for each game entered by the user
+ * Places game in listView
+ */
 public class ViewGame extends AppCompatActivity {
 
     /**

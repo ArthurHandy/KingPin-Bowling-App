@@ -14,8 +14,9 @@ import com.example.kingpin.R;
 import java.util.List;
 
 /**
- * @author Group7
+ *
  * Game Adapter for listing all games as user enters new games
+ * @author Group7
  */
 public class GameAdapter extends ArrayAdapter<Game> {
         private int resourceId;

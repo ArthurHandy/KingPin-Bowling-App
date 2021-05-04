@@ -9,7 +9,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-//@Parcel
+/**
+ * Game Class for game function with 10 frames, name, score
+ */
 public class Game implements Serializable {
     /**
      * String Name for game name

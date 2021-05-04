@@ -32,6 +32,9 @@ import java.util.ArrayList;
 
 //import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ * Practice Chart to draw practice game charts
+ */
 public class ChartGame extends Fragment {
     private PieChart pieChart;
     Game g1;

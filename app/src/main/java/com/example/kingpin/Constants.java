@@ -1,8 +1,9 @@
 package com.example.kingpin;
 
 /**
+ *  Save constants for easier reference
  * @author Group7
- * Save constants for easier reference
+ *
  */
 public class Constants {
 
