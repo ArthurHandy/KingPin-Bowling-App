@@ -39,4 +39,5 @@
     <string name="save_scoreBTN">SAVE</string>
     <string name="saveBTN">Save</string>
     <string name="bowling_pin_icon">bowling pin icon</string>
+    <string name="display_score_title">Score</string>
 </resources>

@@ -19,12 +19,14 @@
 
     <!--        </TableRow>-->
     <!--    </TableLayout>-->
-    <TextView
-        android:id="@+id/enterScoreText"
+    <EditText
+        android:id="@+id/enterNameText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:autofillHints=""
         android:fontFamily="monospace"
-        android:text="@string/enter_score_title"
+        android:hint="Enter Name"
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
@@ -40,7 +42,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/enterScoreText">
+        app:layout_constraintTop_toBottomOf="@id/enterNameText">
 
         <TableLayout
             android:layout_width="wrap_content"
@@ -101,8 +103,8 @@
                     android:autofillHints=""
                     android:gravity="center|center_horizontal|center_vertical"
                     android:hint="@string/rollscore_hint"
-                    android:inputType="number"
-                    android:imeOptions="actionDone"/>
+                    android:imeOptions="actionDone"
+                    android:inputType="number" />
 
                 <EditText
                     android:id="@+id/frame1_roll2"
@@ -110,8 +112,8 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:hint="@string/rollscore_hint"
-                    android:inputType="number"
-                    android:imeOptions="actionDone"/>
+                    android:imeOptions="actionDone"
+                    android:inputType="number" />
 
                 <Button
                     android:id="@+id/frame1BTN"
@@ -146,8 +148,8 @@
                     android:layout_weight="1"
                     android:gravity="center|center_horizontal|center_vertical"
                     android:hint="@string/rollscore_hint"
-                    android:inputType="number"
-                    android:imeOptions="actionDone"/>
+                    android:imeOptions="actionDone"
+                    android:inputType="number" />
 
                 <EditText
                     android:id="@+id/frame2_roll2"
@@ -155,8 +157,8 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:hint="@string/rollscore_hint"
-                    android:inputType="number"
-                    android:imeOptions="actionDone"/>
+                    android:imeOptions="actionDone"
+                    android:inputType="number" />
 
                 <Button
                     android:id="@+id/frame2BTN"
@@ -190,8 +192,8 @@
                     android:layout_weight="1"
                     android:gravity="center|center_horizontal|center_vertical"
                     android:hint="@string/rollscore_hint"
-                    android:inputType="number"
-                    android:imeOptions="actionDone"/>
+                    android:imeOptions="actionDone"
+                    android:inputType="number" />
 
                 <EditText
                     android:id="@+id/frame3_roll2"
@@ -199,16 +201,16 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:hint="@string/rollscore_hint"
-                    android:inputType="number"
-                    android:imeOptions="actionDone"/>
+                    android:imeOptions="actionDone"
+                    android:inputType="number" />
 
                 <Button
                     android:id="@+id/frame3BTN"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:imeOptions="actionDone"
                     android:text="@string/saveBTN"
-                    app:backgroundTint="#009688"
-                    android:imeOptions="actionDone"/>
+                    app:backgroundTint="#009688" />
 
 
             </TableRow>
@@ -236,8 +238,8 @@
                     android:layout_weight="1"
                     android:gravity="center|center_horizontal|center_vertical"
                     android:hint="@string/rollscore_hint"
-                    android:inputType="number"
-                    android:imeOptions="actionDone"/>
+                    android:imeOptions="actionDone"
+                    android:inputType="number" />
 
                 <EditText
                     android:id="@+id/frame4_roll2"
@@ -245,16 +247,16 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:hint="@string/rollscore_hint"
-                    android:inputType="number"
-                    android:imeOptions="actionDone"/>
+                    android:imeOptions="actionDone"
+                    android:inputType="number" />
 
                 <Button
                     android:id="@+id/frame4BTN"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:imeOptions="actionDone"
                     android:text="@string/saveBTN"
-                    app:backgroundTint="#009688"
-                    android:imeOptions="actionDone"/>
+                    app:backgroundTint="#009688" />
 
             </TableRow>
 
@@ -281,8 +283,8 @@
                     android:layout_weight="1"
                     android:gravity="center|center_horizontal|center_vertical"
                     android:hint="@string/rollscore_hint"
-                    android:inputType="number"
-                    android:imeOptions="actionDone"/>
+                    android:imeOptions="actionDone"
+                    android:inputType="number" />
 
                 <EditText
                     android:id="@+id/frame5_roll2"
@@ -290,16 +292,16 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:hint="@string/rollscore_hint"
-                    android:inputType="number"
-                    android:imeOptions="actionDone"/>
+                    android:imeOptions="actionDone"
+                    android:inputType="number" />
 
                 <Button
                     android:id="@+id/frame5BTN"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:imeOptions="actionDone"
                     android:text="@string/saveBTN"
-                    app:backgroundTint="#009688"
-                    android:imeOptions="actionDone"/>
+                    app:backgroundTint="#009688" />
 
             </TableRow>
 
@@ -326,8 +328,8 @@
                     android:layout_weight="1"
                     android:gravity="center|center_horizontal|center_vertical"
                     android:hint="@string/rollscore_hint"
-                    android:inputType="number"
-                    android:imeOptions="actionDone"/>
+                    android:imeOptions="actionDone"
+                    android:inputType="number" />
 
                 <EditText
                     android:id="@+id/frame6_roll2"
@@ -335,8 +337,8 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:hint="@string/rollscore_hint"
-                    android:inputType="number"
-                    android:imeOptions="actionDone"/>
+                    android:imeOptions="actionDone"
+                    android:inputType="number" />
 
                 <Button
                     android:id="@+id/frame6BTN"
@@ -370,8 +372,8 @@
                     android:layout_weight="1"
                     android:gravity="center|center_horizontal|center_vertical"
                     android:hint="@string/rollscore_hint"
-                    android:inputType="number"
-                    android:imeOptions="actionDone"/>
+                    android:imeOptions="actionDone"
+                    android:inputType="number" />
 
                 <EditText
                     android:id="@+id/frame7_roll2"
@@ -379,8 +381,8 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:hint="@string/rollscore_hint"
-                    android:inputType="number"
-                    android:imeOptions="actionDone"/>
+                    android:imeOptions="actionDone"
+                    android:inputType="number" />
 
                 <Button
                     android:id="@+id/frame7BTN"
@@ -414,8 +416,8 @@
                     android:layout_weight="1"
                     android:gravity="center|center_horizontal|center_vertical"
                     android:hint="@string/rollscore_hint"
-                    android:inputType="number"
-                    android:imeOptions="actionDone"/>
+                    android:imeOptions="actionDone"
+                    android:inputType="number" />
 
                 <EditText
                     android:id="@+id/frame8_roll2"
@@ -423,8 +425,8 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:hint="@string/rollscore_hint"
-                    android:inputType="number"
-                    android:imeOptions="actionDone"/>
+                    android:imeOptions="actionDone"
+                    android:inputType="number" />
 
                 <Button
                     android:id="@+id/frame8BTN"
@@ -459,8 +461,8 @@
                     android:autofillHints=""
                     android:gravity="center|center_horizontal|center_vertical"
                     android:hint="@string/rollscore_hint"
-                    android:inputType="number"
-                    android:imeOptions="actionDone"/>
+                    android:imeOptions="actionDone"
+                    android:inputType="number" />
 
                 <EditText
                     android:id="@+id/frame9_roll2"
@@ -468,8 +470,8 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:hint="@string/rollscore_hint"
-                    android:inputType="number"
-                    android:imeOptions="actionDone"/>
+                    android:imeOptions="actionDone"
+                    android:inputType="number" />
 
                 <Button
                     android:id="@+id/frame9BTN"
@@ -498,25 +500,74 @@
 
                 <EditText
                     android:id="@+id/frame10_roll1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|center_horizontal|center_vertical"
+                    android:hint="@string/rollscore_hint"
+                    android:imeOptions="actionDone"
+                    android:inputType="number" />
+
+                <EditText
+                    android:id="@+id/frame10_roll2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:hint="@string/rollscore_hint"
+                    android:imeOptions="actionDone"
+                    android:inputType="number" />
+
+                <TextView
+                    android:id="@+id/emptyCellFrame10"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="monospace"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:textSize="36sp"
+                    android:textStyle="bold"
+                    tools:layout_editor_absoluteX="66dp"
+                    tools:layout_editor_absoluteY="174dp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/frame11"
+                    android:layout_width="64dp"
+                    android:layout_height="58dp"
+                    android:fontFamily="monospace"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:textSize="36sp"
+                    android:textStyle="bold"
+                    tools:layout_editor_absoluteX="66dp"
+                    tools:layout_editor_absoluteY="174dp" />
+
+                <TextView
+                    android:id="@+id/frame"
+                    android:layout_width="64dp"
+                    android:layout_height="58dp"
+                    android:fontFamily="monospace"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:textSize="36sp"
+                    android:textStyle="bold"
+                    tools:layout_editor_absoluteX="66dp"
+                    tools:layout_editor_absoluteY="174dp" />
+
+                <EditText
+                    android:id="@+id/frame10_roll3"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center|center_horizontal|center_vertical"
                     android:hint="@string/rollscore_hint"
-                    android:inputType="number"
-                    android:imeOptions="actionDone"/>
-
-                <EditText
-                    android:id="@+id/frame10_roll2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:hint="@string/rollscore_hint"
-                    android:inputType="number"
-                    android:imeOptions="actionDone"/>
+                    android:imeOptions="actionDone"
+                    android:inputType="number" />
 
                 <Button
-                    android:id="@+id/frame10BTN"
+                    android:id="@+id/frame10BTN2"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:text="@string/saveBTN"
@@ -549,5 +600,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/totalScore"
         app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="55dp"
+        android:layout_height="64dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/scrollView2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/fui_ic_check_circle_black_128dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

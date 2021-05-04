@@ -16,12 +16,13 @@
             app:destination="@id/SecondFragment" />
         <action
             android:id="@+id/action_FirstFragment_to_Chart"
-            app:destination="@id/ChartGame" />
+            app:destination="@id/fragment_listgames" />
 
         <action
             android:id="@+id/action_FirstFragment_to_EnterScore"
             app:destination="@id/EnterScore" />
     </fragment>
+
     <fragment
         android:id="@+id/SecondFragment"
         android:name="com.example.kingpin.SecondFragment"
@@ -54,5 +55,31 @@
         <action
             android:id="@+id/action_EnterFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
+        <action
+            android:id="@+id/action_EnterFragment_to_SavedScore"
+            app:destination="@id/ScoreSaved_Fragment"
+            app:popUpTo="@id/ScoreSaved_Fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ScoreSaved_Fragment"
+        android:name="com.example.kingpin.ScoreSaved"
+        android:label="SavedScore"
+        tools:layout="@layout/fragment_score" >
+        <action
+            android:id="@+id/action_ScoreFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_listgames"
+        android:name="com.example.kingpin.game.SavedGamesList"
+        android:label="listgames"
+        tools:layout="@layout/fragment_listgames" >
+        <action
+            android:id="@+id/action_listgamesFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+
     </fragment>
 </navigation>

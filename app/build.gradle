@@ -29,6 +29,11 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    buildFeatures{
+        dataBinding = true // for data binding
+        viewBinding = true // for view binding
+    }
 }
 
 dependencies {
@@ -64,6 +69,7 @@ dependencies {
     implementation 'androidx.coordinatorlayout:coordinatorlayout:1.1.0'
     implementation 'androidx.navigation:navigation-fragment:2.3.5'
     implementation 'androidx.navigation:navigation-ui:2.3.5'
+    implementation 'androidx.viewpager:viewpager:1.0.0'
 
     testImplementation 'junit:junit:4.+'
 
@@ -71,6 +77,23 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
+//    implementation 'com.jakewharton:butterknife:9.0.0-rc1'
+//    annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0-rc1'
+
+//    implementation 'com.androidx.support:recyclerview-v7:25.3.1'
+
+//    implementation 'com.google.firebase:firebase-auth:19.2.0'
+    implementation 'com.google.firebase:firebase-database:19.2.0'
+
+    implementation 'com.firebaseui:firebase-ui-database:6.2.0'
+
+    implementation 'androidx.viewpager:viewpager:1.0.0'
+
+    implementation 'org.parceler:parceler-api:1.1.12'
+    annotationProcessor 'org.parceler:parceler:1.1.12'
 
 
 }
