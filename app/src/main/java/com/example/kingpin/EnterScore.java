@@ -30,7 +30,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-//import androidx.navigation.fragment.navArgs;
 
 
 public class EnterScore extends Fragment {
@@ -424,7 +423,6 @@ public class EnterScore extends Fragment {
         });
 
 
-        ///////////////////////////////////////////
         view.findViewById(R.id.imageButton3).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -435,9 +433,6 @@ public class EnterScore extends Fragment {
 
 
     }
-
-
-
 
 
 

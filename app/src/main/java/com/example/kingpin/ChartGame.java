@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
@@ -47,6 +46,8 @@ public class ChartGame extends Fragment {
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
+//        Intent gIntent = getIntent();
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.chart_game, container, false);
     }
@@ -56,7 +57,7 @@ public class ChartGame extends Fragment {
 
         ///////////////////////////////////////
 
-        listView = view.findViewById(R.id.listView);
+//        listView = view.findViewById(R.id.listView);
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
@@ -111,13 +112,13 @@ public class ChartGame extends Fragment {
 
 
 
-        view.findViewById(R.id.button_prev).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(ChartGame.this)
-                        .navigate(R.id.action_ChartFragment_to_FirstFragment);
-            }
-        });
+//        view.findViewById(R.id.button_prev).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                NavHostFragment.findNavController(ChartGame.this)
+//                        .navigate(R.id.action_ChartFragment_to_FirstFragment);
+//            }
+//        });
     }
 
     private void setupPieChart(String score) {

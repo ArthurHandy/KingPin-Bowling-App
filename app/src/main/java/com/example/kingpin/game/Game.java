@@ -4,12 +4,13 @@ package com.example.kingpin.game;
 
 import org.parceler.Parcel;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-@Parcel
-public class Game {
+//@Parcel
+public class Game implements Serializable {
     String Name;
 //    int numGame;
     String totalScore;

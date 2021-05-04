@@ -11,22 +11,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.KingPin">
-        <activity android:name=".Register"
-            android:theme="@style/Theme.Login"></activity>
-
+        <activity android:name=".game.ViewFrames" android:parentActivityName=".game.ViewGame"/>
+<!--        <activity android:name=".SecondActivity" android:parentActivityName=".MainActivity" />-->
+        <!-- <activity android:name=".game.ViewGame"></activity> -->
+        <activity
+            android:name=".game.ViewGame" android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".Register"
+            android:theme="@style/Theme.Login" />
         <activity
             android:name=".Login"
-            android:theme="@style/Theme.Login">
-
-        </activity>
-
-        <activity android:name=".MainActivity"
+            android:theme="@style/Theme.Login" />
+        <activity
+            android:name=".MainActivity"
             android:windowSoftInputMode="stateHidden|adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-
             </intent-filter>
         </activity>
     </application>

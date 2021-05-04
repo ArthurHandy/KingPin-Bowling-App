@@ -5,7 +5,7 @@
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="random_button_text">MeetUp</string>
-    <string name="previous">Previous</string>
+    <string name="previous">Back</string>
 
     <string name="title_first_fragment">KingPin</string>
     <string name="random_heading">Number of games available %d.</string>
@@ -33,7 +33,6 @@
     <string name="score_frame10">116</string>
     <string name="totalScore_Text">0</string>
     <string name="rollscore_hint">10</string>
-
 
 
     <string name="save_scoreBTN">TOTAL</string>

@@ -25,12 +25,11 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.Objects;
 
+/**
+ * @author Group7
+ * Fragment activity that saves the scores inputed by user
+ */
 public class ScoreSaved extends Fragment {
-
-
-    TextView displayNameText;
-    TextView displayScoreText;
-    ListView listView;
 
     @Override
     public View onCreateView(
@@ -44,49 +43,9 @@ public class ScoreSaved extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        displayNameText = view.findViewById(R.id.displayName);
-        displayScoreText = view.findViewById(R.id.displayScore);
-
-        listView = view.findViewById(R.id.listView);
-
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-
-        String userId = user.getUid();
-
-        DatabaseReference mRef = FirebaseDatabase.getInstance().getReference().child(userId).child("Games");
-
-        final ArrayList<String> list = new ArrayList<String>();
-
-        final ArrayAdapter adapter = new ArrayAdapter<String>(this.getContext(), R.layout.fragment_gamedetail, list);
-        listView.setAdapter(adapter);
-
-        mRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                list.clear();
-                for(DataSnapshot snapshot : dataSnapshot.getChildren()){
-                    Game g1 = snapshot.getValue(Game.class);
-//                    String displayText = g1.
-                    System.out.println(g1.getName());
-                    System.out.println(g1.getTotalScore());
-//                    list.add(snapshot.getValue().toString());
-                   displayNameText.setText(g1.getName());
-                   displayScoreText.setText(g1.getTotalScore());
-                }
-
-                adapter.notifyDataSetChanged();
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-
-
-
-
+        /**
+         * Home button navigates to the first fragment
+         */
         view.findViewById(R.id.homeBTN).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

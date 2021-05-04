@@ -16,10 +16,20 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+/**
+ * Main Activity displays First Fragment and main_menu
+ * @author Group7
+ */
 public class MainActivity extends AppCompatActivity {
 
+    /**
+     * FirebaseAuth authorization for user login/logout
+     */
     private FirebaseAuth mAuth;
 
+    /**
+     * Firebase mAuthListener checks for changes
+     */
     private FirebaseAuth.AuthStateListener mAuthListener;
 
     @Override
@@ -27,8 +37,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Get firebase instance
         mAuth = FirebaseAuth.getInstance();
 
+        //implement mAuthListener for user
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -41,39 +53,13 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
-
-//        FloatingActionButton fab = findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//            public void onClick(View view) {
-//                NavHostFragment.findNavController(MainActivity.this)
-//                        .navigate(R.id.action_FirstFragment_to_SecondFragment);
-//            }
-//        });
-
     }
 
-//    @Override
-//    public void onStart() {
-//        super.onStart();
-//        mAuth.addAuthStateListener(mAuthListener);
-//    }
-//
-//    @Override
-//    public void onStop() {
-//        super.onStop();
-//        if (mAuthListener != null) {
-//            mAuth.removeAuthStateListener(mAuthListener);
-//        }
-//    }
 
     @Override
     protected void onStart() {
         super.onStart();
+        //Get current user
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
         if (currentUser == null){
             Intent intent = new Intent(MainActivity.this,Login.class);
@@ -97,17 +83,27 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        else if(id == R.id.action_logout){
-                mAuth.signOut();
+//        if (id == R.id.action_settings) {
+//            return true;
+//        }
+//        else if(id == R.id.action_logout){
+//                mAuth.signOut();
+//
+//                Intent intent = new Intent(MainActivity.this,Login.class);
+//                startActivity(intent);
+//                finish();
+//        }
 
-                Intent intent = new Intent(MainActivity.this,Login.class);
-                startActivity(intent);
-                finish();
+        //logout option
+        if(id == R.id.action_logout){
+            mAuth.signOut();
+
+            Intent intent = new Intent(MainActivity.this,Login.class);
+            startActivity(intent);
+            finish();
         }
 
+        //if logout selected logout user
         return super.onOptionsItemSelected(item);
     }
 
