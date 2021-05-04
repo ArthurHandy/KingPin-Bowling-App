@@ -37,14 +37,17 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-
+/**
+ * SavedGamesList fragment displays the Game objects added by user
+ */
 public class SavedGamesList extends Fragment {
 
+    /**
+     * ListView listView to display games
+     */
     ListView listView;
 
-    TextView gameName;
-    TextView gameScore;
-
+    //Declare Intent gameIntent
     Intent gameIntent;
 
     @Override
@@ -52,6 +55,7 @@ public class SavedGamesList extends Fragment {
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
+        //gameIntent from ViewGame class
         gameIntent = new Intent(this.getContext(), ViewGame.class);
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_listgames, container, false);
@@ -60,35 +64,37 @@ public class SavedGamesList extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-
-
+        //Initialize listView
         listView = view.findViewById(R.id.listViewGames);
 
 
+        //Get user form Firebase
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
+        //Get UserId
         String userId = user.getUid();
 
+        //mref is database reference for Games
         DatabaseReference mRef = FirebaseDatabase.getInstance().getReference().child(userId).child("Games");
 
+        //ArrayList of Game objects
         final ArrayList<Game> list = new ArrayList<Game>();
 
-//        final ArrayAdapter adapter = new ArrayAdapter<Game>(this.getContext(), R.layout.fragment_gamedetail, list);
-
+        //GameAdapter for listView based on fragment_gamedetail
         GameAdapter adapter = new GameAdapter(this.getContext(),
                 R.layout.fragment_gamedetail, list);
         listView.setAdapter(adapter);
 
+        //mRef for all Game objects
         mRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 list.clear();
+                //For all "Games"
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     Game g1 = snapshot.getValue(Game.class);
-//                    String displayText = g1.
                     System.out.println(g1.getName());
-                    System.out.println(g1.getTotalScore());
-//                    list.add(snapshot.getValue().toString());
+                    System.out.println(g1.getTotalScore());;
                     list.add(g1);
 
                 }
@@ -102,174 +108,19 @@ public class SavedGamesList extends Fragment {
 
             }
         });
+        /**
+         * Select a Game in the listView to display their charts
+         */
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
                 Game g = list.get(position);
-//                gameIntent.put
                 gameIntent.putExtra("GAME_SELECTED", g);
                 startActivity(gameIntent);
             }
         });
 
 
-
-//        view.findViewById(R.id.homeBTN).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                NavHostFragment.findNavController(ScoreSaved.this)
-//                        .navigate(R.id.action_ScoreFragment_to_FirstFragment);
-//            }
-//        });
-
-
     }
 }
-
-//public class SavedGamesList extends AppCompatActivity {
-//
-//    ListView listView;
-//
-//    TextView gameName;
-//    TextView gameScore;
-//
-//    Intent gameIntent;
-//
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_list_games);
-//
-//        listView = findViewById(R.id.listViewGames);
-//
-//
-//        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-//
-//        String userId = user.getUid();
-//
-//        DatabaseReference mRef = FirebaseDatabase.getInstance().getReference().child(userId).child("Games");
-//
-//        final ArrayList<Game> list = new ArrayList<Game>();
-//
-////        final ArrayAdapter adapter = new ArrayAdapter<Game>(this.getContext(), R.layout.fragment_gamedetail, list);
-//
-//        GameAdapter adapter = new GameAdapter(this,
-//                R.layout.fragment_gamedetail, list);
-//        listView.setAdapter(adapter);
-//
-//        mRef.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                list.clear();
-//                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-//                    Game g1 = snapshot.getValue(Game.class);
-////                    String displayText = g1.
-//                    System.out.println(g1.getName());
-//                    System.out.println(g1.getTotalScore());
-////                    list.add(snapshot.getValue().toString());
-//                    list.add(g1);
-//
-//                }
-//
-//                adapter.notifyDataSetChanged();
-//
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//
-//            }
-//        });
-//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view,
-//                                    int position, long id) {
-//                Game g = list.get(position);
-////                gameIntent.put
-//                gameIntent.putExtra("GAME_SELECTED", g);
-//                startActivity(gameIntent);
-//            }
-//        });
-//
-//    }
-
-//    @Override
-//    public View onCreateView(
-//            LayoutInflater inflater, ViewGroup container,
-//            Bundle savedInstanceState
-//    ) {
-//        gameIntent = new Intent(this.getContext(), ViewGame.class);
-//        // Inflate the layout for this fragment
-//        return inflater.inflate(R.layout.fragment_listgames, container, false);
-//    }
-//
-//    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
-//        super.onViewCreated(view, savedInstanceState);
-//
-//
-//
-//        listView = view.findViewById(R.id.listViewGames);
-//
-//
-//        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-//
-//        String userId = user.getUid();
-//
-//        DatabaseReference mRef = FirebaseDatabase.getInstance().getReference().child(userId).child("Games");
-//
-//        final ArrayList<Game> list = new ArrayList<Game>();
-//
-////        final ArrayAdapter adapter = new ArrayAdapter<Game>(this.getContext(), R.layout.fragment_gamedetail, list);
-//
-//        GameAdapter adapter = new GameAdapter(this.getContext(),
-//                R.layout.fragment_gamedetail, list);
-//        listView.setAdapter(adapter);
-//
-//        mRef.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                list.clear();
-//                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-//                    Game g1 = snapshot.getValue(Game.class);
-////                    String displayText = g1.
-//                    System.out.println(g1.getName());
-//                    System.out.println(g1.getTotalScore());
-////                    list.add(snapshot.getValue().toString());
-//                    list.add(g1);
-//
-//                }
-//
-//                adapter.notifyDataSetChanged();
-//
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//
-//            }
-//        });
-//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view,
-//                                    int position, long id) {
-//                Game g = list.get(position);
-////                gameIntent.put
-//                gameIntent.putExtra("GAME_SELECTED", g);
-//                startActivity(gameIntent);
-//            }
-//        });
-//
-//
-//
-////        view.findViewById(R.id.homeBTN).setOnClickListener(new View.OnClickListener() {
-////            @Override
-////            public void onClick(View view) {
-////                NavHostFragment.findNavController(ScoreSaved.this)
-////                        .navigate(R.id.action_ScoreFragment_to_FirstFragment);
-////            }
-////        });
-//
-//
-//    }
-//}

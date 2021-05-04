@@ -13,6 +13,10 @@ import com.example.kingpin.R;
 
 import java.util.List;
 
+/**
+ * @author Group7
+ * Game Adapter for listing all games as user enters new games
+ */
 public class GameAdapter extends ArrayAdapter<Game> {
         private int resourceId;
         public GameAdapter(Context context, int textViewResourceId,
@@ -22,10 +26,14 @@ public class GameAdapter extends ArrayAdapter<Game> {
         }
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
+            //get Game object g
             Game g = getItem(position);
-//            View view = LayoutInflater.from(getContext()).inflate(resourceId, null);
+
             View view;
+
+            // Creat viewHolder object
             ViewHolder viewHolder;
+            //Generate viewHolder for new game with game name and score
             if (convertView == null) {
                 view = LayoutInflater.from(getContext()).inflate(resourceId, null);
                 viewHolder = new ViewHolder();
@@ -36,12 +44,17 @@ public class GameAdapter extends ArrayAdapter<Game> {
                 view = convertView;
                 viewHolder = (ViewHolder) view.getTag();
             }
+            //Set TextView for name and score with Game g values
             viewHolder.gameName.setText(g.getName());
             viewHolder.gameScore.setText(g.getTotalScore());
             return view;
         }
 
-        class ViewHolder{
+    /**
+     * Class ViewHolder
+     * Contains gameName and gameScore
+     */
+    class ViewHolder{
             TextView gameName;
             TextView gameScore;
         }

@@ -22,14 +22,45 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+/**
+ * Login Page
+ * Uses Firebase authentication
+ */
 public class Login extends AppCompatActivity {
 
+    /**
+     * EditText loginEmailtext;
+     * User email
+     */
     private EditText loginEmailtext;
+    /**
+     * EditText loginPasswordtext;
+     * User password
+     */
     private EditText loginPasswordtext;
+    /**
+     * Button logintn;
+     * Button to login
+     */
     private Button loginbtn;
+    /**
+     * Button to register
+     */
     private Button loginregisterbtn;
+
+    /**
+     * FireBaseAuth mAuth for authorization
+     */
     private FirebaseAuth mAuth;
+
+    /**
+     * ProgressBar visual for logging in
+     */
     private ProgressBar progressBar;
+
+    /**
+     * CheckBox to display password
+     */
     private CheckBox checkBox;
 
     @Override

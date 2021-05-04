@@ -22,15 +22,52 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+/**
+ * Register Activity to Register user
+ */
 public class Register extends AppCompatActivity {
 
+    /**
+     * EditText register_email_field
+     * User email
+     */
     private EditText register_email_field;
+
+    /**
+     * EditText register_pass_field
+     * User password
+     */
     private EditText register_pass_field;
+
+    /**
+     * EditText register_confir_pass_field
+     * confirm the correct password
+     */
     private EditText register_confir_pass_field;
+
+    /**
+     * Button to register user
+     */
     private Button reg_btn;
+
+    /**
+     * Button to login
+     */
     private Button reg_login_btn;
+
+    /**
+     * ProgressBar to visualize registration proces
+     */
     private ProgressBar progressBar;
+
+    /**
+     * Display password if checked
+     */
     private CheckBox checkBox;
+
+    /**
+     * FireBaseAuth mAuth for authorization
+     */
     private FirebaseAuth mAuth;
 
     @Override
