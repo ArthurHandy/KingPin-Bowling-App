@@ -23,8 +23,6 @@ Clone the repository and import into Android Studio:
 git clone https://github.com/ArthurHandy/KingPin-Bowling-App.git
 ```
 
-- Make an account at [Firebase](https://firebase.google.com)
-
 ## Changes Needed [Step by step to adding firebase](https://firebase.google.com/docs/android/setup)
 - Create a Firebase project to connect to your Android app. To do this, go to [Firebase Console](https://console.firebase.google.com/).
 
