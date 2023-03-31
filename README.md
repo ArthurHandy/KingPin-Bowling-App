@@ -1,4 +1,4 @@
-# KingPin Bowling App -> See Wiki page for additional information.
+# KingPin Bowling App -> See [Wiki page](https://github.com/ArthurHandy/KingPin-Bowling-App/wiki) for additional information.
 KingPin is a bowling app made in Android Studio using Java and Google Firebase authentication. Google Firebase authentication is a backend service that keeps tracks of users information such as, email, login, password, past and present game scores. The app contains 7 different pages you can visit.
 
 `Login`: User email, password, and show password box
